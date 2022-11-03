@@ -56,9 +56,12 @@ There are basically two dataset: the `Joined` dataset from a `set(1 + 2 + 5 + 6)
     1. Tune the hyperparameter and focus on what's match with the end testing dataset.
     2. Use other aggregation and weighting mechanism for the profile.
     3. Use the output from BERTopic as a feature for another model (try to get the "middle" point where my taste is located).
-3. Implement BTM and Top2Vec to compare the result
-4. Try to solve OOV(s) in case it does happen
-5. Use [perplexity][Perplexity] based measure in addition to coherence score (Another [example][Naive LDA])
+3. Identify weird clusters and find a way to clear them
+4. Use more data (use all the data in the public dataset)
+5. Migrate the project to Kedro so that the workflow are much more clean (plus try experiment tracking tools like MLFlow)
+6. Implement BTM and Top2Vec to compare the result
+7. Try to solve OOV(s) in case it does happen
+8. Use [perplexity][Perplexity] based measure in addition to coherence score (Another [example][Naive LDA])
 
 ## Useful References
 
