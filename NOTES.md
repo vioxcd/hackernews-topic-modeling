@@ -15,7 +15,7 @@ This notes are extracted from my original Colab's notebook
     most recent date: 2022-10-14 00:01:15+0000
 4. `hackernews-stories-since-2022-10-14.csv`  
     Additional HN data for (3) should be used along with the test case (5)  
-    most recent date: 2022-10-21 09:10:56+0000  
+    most recent date: 2022-10-24 23:54:08
 5. `hackernews-since-20221016`  
     Urls of the articles I've most recently opened (since 2022-10-16) should be used as test case
 6. `hackernews-2019-2022-sessions.csv`  
@@ -27,6 +27,19 @@ There are basically two dataset: the `Joined` dataset from a `set(1 + 2 + 5 + 6)
 - Joined are split between before October 14 (4 `min()`) and after that
 - Profile building are done using data from before October 14
 - Validation are done using data after October 14
+
+## Queries
+
+```sql
+SELECT title, url, timestamp, type, id
+FROM `bigquery-public-data.hacker_news.full`
+WHERE
+    type = 'story'AND
+    title IS NOT NULL AND
+    timestamp BETWEEN 'START_DATE' AND 'END_DATE'  -- YYYY-MM-DD format
+    -- or could be
+    -- timestamp >= DATE_STRING
+```
 
 ## Processes
 
